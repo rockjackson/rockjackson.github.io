@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>My Portfolio</title>
+        <style> 
+            body {
+                background: rgb(255, 069, 20);
+                color: rgb(50, 125, 50);
+                padding: 10px;
+                font-family: Comic Sans MS;
+            }
+            header {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+            #all-contents {
+                max-width: 800px;
+                margin: auto;
+            }
+            
+            /* navigation menu */
+            nav {
+                background: rgb(150, 0, 200);
+                margin: 0 auto;
+                display: flex;
+                padding: 10px
+            }
+            nav header {
+                display: flex;
+                align-items: Center;
+                color: rgb( 255, 255, 255);
+                flex: 1;
+            }
+            nav ul {
+                list-style-image: none;
+            }
+            nav li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+            nav a {
+                text-decoration: none;
+                color: #fff;
+            }
+            img {
+                border: 2px rgb(255, 069, 20);
+                border-radius: 25px;
+            }
+                
+            /* main container area beneath menu */
+            main {
+                background: rgb(245, 238, 219);
+                display: flex;
+            }
+            .sidebar {
+                margin-right: 25px;
+                padding: 10px;
+            }
+            .sidebar img {
+                width: 300px;
+            }
+            .content {
+                flex: 1;
+                padding: 15px;
+            }
+            .games header {
+                font-size: 1.25em;
+            }
+        </style>
+      
+    </header>
+    <body>
+        <div id="all-contents">
+            <nav>
+                <header>Rockey's First Website</header>
+                <lu>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="game.html">Games</a></li>
+                </lu>
+            </nav>
+            
+            <main>
+                <div calss="sidebar">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbEcXWhXs1BCaLb6aCgCONCBRpG3gl8LxF_K42MogfHsLyBvZO">
+                </div>
+                <div class="contents">
+                    <header class="games">Game Discription:</header>
+                    <lu>
+                        <li>Sorry, lunch got in the way. We will be back soon!.</li>
+                    </lu>
+                </div>
+                    <p>
+                    </p>
+            </main>
+        </div>
+    </body>
+</html>
