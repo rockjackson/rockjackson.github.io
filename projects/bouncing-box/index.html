@@ -17,9 +17,12 @@
 			height: 70px;
 			top: 100px;
 			left: 0px;
-			background-color: teal;
+			background-color: rgb(255, 255, 255);
 			font-size: 300%;
 			text-align: center;
+		}
+		body {
+			background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAeFBMVEUAAACjo6OmpqYtLS2qqqpPT09ycnL///8EAwSgoKCjpKNxcXHz8/MDAgSfn596enoXFxc1NTVGRUaVlZWHhodjY2NXV1d9fX13d3g7Ozutra2Uk5RfX18MDAxoaGkpKSkUExQeHh4kJCRCQkLi4uLU09Tn5+eEhIS67lm3AAAE20lEQVR4nO2di3KiMBSGSUQlUvFeURTbbXd9/zfcJFwEayXMQMIZ/68OimZM/HsSzgm5eB4AwDUjYIzHfS4fOBgcuMeAMRCrBYMUS7guwC94/vBgM1kwbjVLHkkaU3nj4RFJ0+Jbq1lev7+//zamcu25PCKSFZEvrGY5mU6nb1Zz7IpItQ8Qywwm/Rp/bzVLumJ9SQ4rq1mGBMT6WFY4P06zXFZSBT0VhIJlLY636/Jx/TjNRgUaOWzZSzHmJMSKOdMuqJB//tft/UA/MjYs+1whlvKH9QEZsXL8O8sq1Nrkn4tMrH4gIhbXrroUjZdinTXFWZK580cfYjG+P39+/omqlqX8LB4XZ9Ky/NPyc/nlQyyuHaqaWLLCzW4evBLrXT6vjlJDiCXbJ/HDskqxEoiVocRSqjwQq1YNC7FQDb17sZj0rI5luFNaFtqs3LJqbdYp3e3Ssj9kA7EyHltWHSkWRzX0qpbFn4kFy1IUlnWOnlpW3sBziKWr4ROx0MDnmFTDBK5DRiFW3YPfJsk2SYszVQ3VpXEEy2I82aVpWvezVFhd+lnqariXaSYcYomsV+/eg/ersaGUK0vjXKzA66uvtjnnsj8r66LJO/YiXgt3Kn1eUqyg+96/oOwpdaWEEbEMbDKrkQHOrdeB80o1THjv3co0quFuW+FQvLtXZ7vibFFJcn1lsQZCALHaEE7f3v65LgQVzp+S5mSBO35c1+bZ+5WCzX9L0zHFdz+R42dRADXCySSO312XgghCulmWR9HQRdTu7oCnRBDLnHogDZ6yUUOH4+Z0AAAwFAbdDQeIslbYHdpNF+b7CHdMiVS8Az/LDIQ7LaiP/ANPYWq+BdosM0ar1Wh1cV0KAAAAnaOnYX64LgUR1JAjdCsbIhgXcEoN0bEhLMsM3DdsAfOtr+tAl9NO8suoeAAAAOA1UANDxMR1KYgg7C82RhcHK7PRBeFOC4RanxfhjhmTeBHvMbQbAADAS7PYX/fXk+tSEEFPx4efZQYGs7UAYrUgYhximbKRROjPAgAA8NK8Kw7N6YCnlrHDpAFj4MG3wMGOTnQRCHfMUQtMYrSyIZfL6HIxWPoLgHZgmYIWQKzWQDIjVoo/rktBBKH2uIbrYAbCnRZgqYIW6K2RIZYZHOs6mLMer9djrHIEAADgpcHAkBZEamcZhDtmCIHY0BgE0i1QezxhopMh4SKOF5joBABoT7GLUWD9XgvB/ZMCb3w8HjluTJkRTyV2s7zW9jekQ7kB51w9LO0tRnfNv/o2iVbUouvBa7HOI8WHpZaL7sg/LVaqGq7pyZZYnKZlzeti2VFrmyTJJm1ONzzqYoEn3FsWQVfRJhWx7Lk+AdF/ixbrEG1kM2JphkigNpjvYdf23pm78LMyKAZYhViZTFbE2qWSsY2cuuXesqxAd/0sB2IRD3fsZklVLDfVkHGiCyS6sSxBcWM1J5Z11tjNsxsciEUXiGWMk2pIF2di0QsOnVjWQfI1sptnNzgQi+6kAVcePPwsM+je3QkdiMWHOtFJNKBXstdPQj2z7hD6224HJsqsssx0EhFFIsoO+VkvGH2vZ/rTZozPZnymXs1mHRyYipYr8DyXWpYDw1gsALFa4XFgjDdpJjRI0yNh9VUvZQlD9c1hcVK+cX9wfTEGAIA2/Af9/W0MVVmwvgAAAABJRU5ErkJggg==");
 		}
 	</style>
 
@@ -33,24 +36,42 @@
 		(function(){
 			'use strict'
 			/* global &*/
-
 			// jQuery stuff setup for you
 			var box = $('.box');
 			var boardWidth = $('.board').width();
 	
 			// TODO 2 - Variable declarations 
-
+			var position;														// reference for the x-coordinate of our box
+			var points;															// reference for the points displayed on the box
+			var speed;															// reference for how fast the box moves
+			var direction;
 			
+			position = 0;
+			points = 0;
+			speed = 10;
+			direction = 1;
+			
+			box.css("left", position);
+			box.text(points);
 			var update = function() {
 				// TODO 3 / 6 / 7 / 8
-				
+				position = position + (speed * direction);						// increase position on every update
+				console.log("new position: " + position);
+				box.css('left', position);										// set the 'left' CSS property of the box to the new value of position
+				if(position > boardWidth) {
+					direction = -1;
+				}
+				else if (position <= 0) {
+					direction = 1;
+				}
 			};
 
-
-			
 			var handleBoxClick = function() {
 				// TODO 4 / 5
-				
+				points = points + 1;											// increase the point total
+				box.text(points);												// update the new points total displayed by the box
+				position = 0;													// reset the position of the box to 0
+				speed = speed + 2;												// increase the speed of the box on every click
 			};
 
 
