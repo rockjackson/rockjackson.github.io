@@ -38,10 +38,10 @@
         
         //////////////////////////////////////////////////////////////////
         // Rockey's Code /////////////////////////////////////////////////
-        platform.create(600, 560);
-        platform.create(80, 500);
-        platform.create(80, 350);
-        platform.create(600, 420);
+        platform.create(600, 562);
+        platform.create(80, 502);
+        platform.create(80, 352);
+        platform.create(600, 422);
         platform.create(64, 55, .1, 15);
         
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
