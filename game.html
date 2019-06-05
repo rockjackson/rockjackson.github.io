@@ -69,6 +69,47 @@
             .games header{
                 font-size: 1.25em;
             }
+            /*dropdown button*/
+            .dropbtn {
+                background-color: rgb(050, 125, 050);
+                color: rgb(255, 255, 255);
+                padding: 10px;
+                font-family:Comic Sans MS;
+                font-size: 15px;
+                border: 20px;
+                border-radius: 14px;
+            }
+            .dropdown {
+                position: relative;
+                display: inline-block;
+                outline: bold;
+            }
+            .dropdown-content{
+                display: none;
+                position: absolute;
+                background-color: rgb(050, 125, 050);
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                border-radius: 25px;
+                outline:bold;
+            }
+            .dropdown-content a {
+                color: rgb(255, 255, 255);
+                padding: 12px 16px;
+                text-decoration: underline;
+                display:block;
+            }
+            .dropdown-content a:hover {
+                background-color: lightgreen;
+                border-radius: 15px;
+            }
+            .dropdown:hover .dropdown-content {
+                display:block;
+            }
+            .dropdown:hover .dropbtn {
+                background-color: rgb(050, 125, 050);
+            }
         </style>
       
     </header>
@@ -77,9 +118,14 @@
             <nav>
                 <header>Rockey's First Website</header>
                 <lu>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="game.html">Games</a></li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Menu</button>
+                        <div class="dropdown-content">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="game.html">Games</a></li>
+                        </div>
+                    </div>
                 </lu>
             </nav>
             
@@ -90,7 +136,7 @@
                 <div class="contents">
                     <header class="games">Games:</header>
                     <lu>
-                        <li>Sorry. Lunch is still on. Come back latter.</li>
+                        <li>Sorry. Lunch is still on. Come back later.</li>
                     </lu>
                 </div>
                     <p>

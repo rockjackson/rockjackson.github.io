@@ -5,7 +5,7 @@
         <style>
             body {
                 background: rgb(255, 069, 020);
-                color: rgb(50, 125, 50);
+                color: rgb(050, 125, 050);
                 padding: 20px;
                 font-family: Comic Sans MS;
             }
@@ -77,6 +77,62 @@
                 width: 300;
                 border-radius: 25px;
             }
+            #interest.header {
+                flex: 1;
+                padding: 15px;
+            }
+            /*dropdown button*/
+            .dropbtn {
+                background-color: rgb(050, 125, 050);
+                color: rgb(255, 255, 255);
+                padding: 10px;
+                font-family:Comic Sans MS;
+                font-size: 15px;
+                border: 20px;
+                border-radius: 14px;
+            }
+            .dropdown {
+                position: relative;
+                display: inline-block;
+                outline: bold;
+            }
+            .dropdown-content{
+                display: none;
+                position: absolute;
+                background-color: rgb(050, 125, 050);
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                border-radius: 25px;
+                outline:bold;
+            }
+            .dropdown-content a {
+                color: rgb(255, 255, 255);
+                padding: 12px 16px;
+                display:block;
+            }
+            .dropdown-content a:hover {
+                background-color: lightgreen;
+                border-radius: 114px;
+            }
+            .dropdown:hover .dropdown-content {
+                display:block;
+            }
+            .dropdown:hover .dropbtn {
+                background-color: rgb(050, 125, 050);
+            }
+            /* search bar */
+            .searchbar {
+                background-color: rgb(050, 125, 050);
+                color: rgb(255, 255, 255);
+                padding: 10px;
+                font-family:Comic Sans MS;
+                font-size: 15px;
+                border: 20px;
+                border-radius: 14px;
+                overflow: hidden;
+            }
+            
         </style>
     </head>
     
@@ -84,13 +140,24 @@
         <div id="all-contents">
             <nav>
                 <header>Rockey's First Website</header>
+                <div class="searchbar">
+                    <input type="text" placeholder="Search...">
+                    <div class="searchbar_content">
+                    </div>
+                </div>
                 <lu>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="game.html">Games</a></li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Menu</button>
+                        <div class="dropdown-content">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="game.html">Games</a></li>
+                        </div>
+                    </div>
                 </lu>
             </nav>
-            
+
+
             <main>
                 <div class="sidebar">
                     <img src="https://3dwarehouse.sketchup.com/warehouse/getpubliccontent?contentId=086a168e-840e-4ffe-a142-7b1d8d44b58d">
@@ -98,12 +165,12 @@
                 
                 <div class="content">
                     <header>News:</header>
-                        <li>This site is now on version 1.00.12 :</li>
-                        <li>There are now two games in Portfolio.</li>
-                        <li>Have a great time.</li>
-                        <li></li>
-                    <section class="interest">
-                        <header>Interest</header>
+                    <li>This site is now on version 1.00.14 :</li>
+                    <li>Happy Birthday Mom! 11/8/16</li>
+                    <li>We have added a dropdown menue to our navigation bar to help clean things up a bit.</li>
+                    <li>We will soon have a new item to play around with inside position.</li>
+                    <section id="interest">
+                        <header>Interest:</header>
                         <lu>
                             <li>Gaming</li>
                             <li>Art Design</li>
